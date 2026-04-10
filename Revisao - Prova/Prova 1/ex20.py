@@ -7,7 +7,6 @@ baixo = 0
 adequado = 0
 
 while nome_produto != 'fim':
-    nome_produto = input('Informe o nome do produto: ').lower()
     estoque = int(input('Qual a quantidade disponivel para estoque: '))
     quantidade_minima = int(input('Qual a quantidade minima ideal para o funcionamento: '))
     
@@ -24,6 +23,8 @@ while nome_produto != 'fim':
         elif estoque >= quantidade_minima:
             print('Estoque adequado')
             adequado +=1
+            
+    nome_produto = input('Informe o nome do produto: ').lower()
     
 if critica <= 0 and baixo <= 0 and baixo <= 0:
     print('O sistema nao localizou nenhum produto valido')
