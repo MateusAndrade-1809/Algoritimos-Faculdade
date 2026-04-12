@@ -1,21 +1,9 @@
-n = int(input('Digite o valor de n: '))
+'''Considere a série:
+***imagem***
+Escreva um programa que leia um valor inteiro n e calcule os n primeiros termos
+dessa série e sua soma final.
+Observação: o numerador de cada termo é formado por um produtório sequencial
+começando em 2, e o denominador é o quadrado da posição do termo'''
 
-soma = 0
 
-for i in range(1, n + 1):
-    numerador = 1
-    
-    j = 2
-    while j <= i + 1:
-        numerador = numerador * j
-        j = j + 1
-    
-    denominador = i * i
-    
-    termo = numerador / denominador
-    
-    print(f'termo {i} = {termo}')
-    
-    soma = soma + termo
 
-print(f'A soma total é de {soma}')

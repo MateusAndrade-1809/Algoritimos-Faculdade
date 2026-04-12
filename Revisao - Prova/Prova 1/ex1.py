@@ -1,17 +1,16 @@
-numero = int(input("Digite um número inteiro positivo: "))
+##Peça um número inteiro positivo ao usuário e determine se ele é primo utilizando while
 
-divisor = 2
-eh_primo = True
+n = int(input('Digite um número inteiro positivo: '))
 
-if numero <= 1:
-    eh_primo = False
+divisor = 1
+quantidade_divisores = 0
+
+while divisor <= n:
+    if n % divisor == 0:
+        quantidade_divisores += 1
+    divisor += 1
+
+if quantidade_divisores == 2:
+    print('É primo')
 else:
-    while divisor < numero and eh_primo:
-        if numero % divisor == 0:
-            eh_primo = False
-        divisor = divisor + 1
-
-if eh_primo:
-    print("É primo")
-else:
-    print("Não é primo")
+    print('Não é primo')

@@ -1,31 +1,32 @@
-import random
-sair  = 'n'
-while sair == 'n':
-    escolha = input('par ou impar(p ou i): ').lower()
-    while escolha not in ['p', 'i']:
-        escolha = input('Escolha invalida. Escolha p ou i:').lower()
+'''Crie um jogo em que o usuário escolhe par ou ímpar, informa um número e joga
+contra o computador (que gera um número aleatório). O programa deve mostrar o
+resultado da soma, identificar se é par ou ímpar e informar o vencedor. O jogo deve
+se repetir até o usuário desejar sair.'''
 
-    if escolha == 'p':
-        print('Voce escolheu par. Logo, o computador sera impar.')
-        numero_jogador = int(input('Agora escolha o numero qeu voce vai jogar:'))
-        numero_computador = random.randint(1, 100)
-        print(f'O numero jogado pelo computador foi de {numero_computador}')
-        print(f'A soma dos dois numeros foi de {numero_jogador + numero_computador}')
-        if (numero_computador + numero_jogador) % 2 == 0:
-            print('Parabens, Voce ganho!!')
+from random import randint
+
+n_computador = randint(1,100)
+
+print('Jogo impar ou par')
+
+n_usuario = -1
+
+while n_usuario:
+    impar_par = input('Escolha (i) para imapr ou (p) para par: ')
+    n_usuario = int(input('Escolha o seu numero para jogar(0 para sair): '))
+    print(f'O numero do computador foi {n_computador}')
+    print(f'A soma dos numeros foi de {n_usuario + n_computador}')
+    if impar_par == 'i':
+        print(f'Voce escolheu impar')
+        if (n_computador + n_usuario) / 2 % 1:
+            print('Parabens, voce venceu!!')
         else:
-            print('O computador ganhou, não foi desssa vez!!')
-
-    if escolha == 'i':
-        print('Voce escolheu impar. Logo, o computador sera par.')
-        numero_jogador = int(input('Agora escolha o numero qeu voce vai jogar:'))
-        numero_computador = random.randint(1, 100)
-        print(f'O numero jogado pelo computador foi de {numero_computador}')
-        print(f'A soma dos dois numeros foi de {numero_jogador + numero_computador}')
-        if (numero_computador + numero_jogador) % 2 == 1:
-            print('Parabens, Voce ganho!!')
+            print('Não foi dessa vez, tente novamente!!')
+            
+    if impar_par == 'p':
+        print('Voce escolheu par')
+        if (n_computador + n_usuario) / 2 % 1:
+            print('Não foi dessa vez, tente novamente!!')
         else:
-            print('O computador ganhou, não foi desssa vez!!')
-
-    sair = input('voce deseja sair? s/n :')
-print('Saindo do Programa...')
+            print('Parabens, voce venceu!!')
+    
