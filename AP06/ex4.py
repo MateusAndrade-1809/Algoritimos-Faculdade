@@ -1,6 +1,8 @@
-palavra = input('Digite uma palavra: ').lower()
+palavra = input('Digite uma palavra: ')
+contagem = 0
 
-c = 0
-for l in palavra:
-    if l in "aeiou": c += 1
-print(c)
+for vogais in palavra:
+    if vogais in 'aeiou':
+        contagem += 1
+        
+print(f'A palvra {palavra} tem {contagem} vogais')

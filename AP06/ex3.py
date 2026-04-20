@@ -1,12 +1,9 @@
-n = int(input('Digite um numero:'))
-m = int(input('Digite outro numero: '))
-res = 0
+n = int(input('Digite um numero inteiro positivo: '))
+m = int(input('Digite outro numero inteiro positivo: '))
+soma = 0
 
-if n > m:
-    print('O primeiro digito deve ser maior que o segundo')
+for i in range(n, (m +1), 1):
+    soma += i
+print(soma)
     
-else:
-    for i in (n, (m+1), 1):
-        res += 1
-    print(res)
     

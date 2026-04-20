@@ -1,8 +1,9 @@
-m =  n = int(input('Digite um numero: '))
+maior = 0
 
-for i in range(4):
-    n = int(input('Digite um numero: '))
-    if n > m:
-        m = n
-print(m)
+for contador in range(1,6):
+    num = int(input('Digite um numero: '))
     
+    if num > maior:
+        maior = num
+
+print(f'O maior numero digitado foi o {maior}')
