@@ -6,8 +6,15 @@ def calcular_fatura(horas):
     elif horas > 500:
         return (horas - 500) * 2,5 + 2100
     
-horas = int(input('Digite as horas de instancia do servidor: '))
-
-dinheiro = calcular_fatura(horas)
-print(f'O valor foi de R${dinheiro}')
+id = int(input('Digite o ID do cliente: '))
+faturamento_total = 0
+fatura = 0
     
+while id != 0:
+    horas = int(input('Digite as horas consumidas do cliente: '))
+    fatura = calcular_fatura(horas)
+    print(f'O total a pagar do cliente {id} é de R${fatura}')
+    faturamento_total += fatura
+    id = int(input('Digite o ID do cliente: '))
+
+print(f'Faturamento total da empresa é de R${faturamento_total}')
