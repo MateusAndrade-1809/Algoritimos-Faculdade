@@ -14,4 +14,3 @@ while contador < 20:
 
 nova_lista = eliminar_duplicatas(lista)
 print(nova_lista)
-
