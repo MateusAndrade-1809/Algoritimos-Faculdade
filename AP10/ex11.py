@@ -3,15 +3,18 @@ lista_reversa = []
 palindromo = 0
 
 for i in range(7):
-    numeros = int(input('Digite numeros inteiros: '))
-    lista.append(numeros)
-    
-for i in lista:
-    lista_reversa.append(lista[7 - i])
+    numero = int(input('Digite números inteiros: '))
+    lista.append(numero)
+
+for i in range(7):
+    lista_reversa.append(lista[6 - i])
 
 for i in range(7):
     if lista[i] == lista_reversa[i]:
         palindromo += 1
+
+print(lista)
+print(lista_reversa)
 
 if palindromo == 7:
     print('A lista é palíndromo.')
