@@ -1,14 +1,32 @@
-sequencia = int(input('Digite uma sequencia: '))
+def maior_trecho_crescente(lista):
+    if len(lista) == 0:
+        return 0
+
+    maior = 1
+    contador = 1
+
+    for i in range(1, len(lista)):
+        if lista[i] > lista[i - 1]:
+            contador += 1
+        else:
+            contador = 1
+
+        if contador > maior:
+            maior = contador
+
+    return maior
+
+
 lista = []
-maior = 0
 
-while sequencia != 0:
-    anterior = sequencia
-    lista.append(sequencia)
-    sequencia = int(input('Digite uma sequencia: '))
-    if anterior < sequencia:
-        maior += 1
+numero = int(input('Digite um número inteiro ou 0 para parar: '))
 
-print(lista)
-print(f'Trecho consecutivo presente: {maior}')
+while numero != 0:
+    lista.append(numero)
+    numero = int(input('Digite um número inteiro ou 0 para parar: '))
+
+resultado = maior_trecho_crescente(lista)
+
+print(f'Lista digitada: {lista}')
+print(f'Maior trecho crescente consecutivo: {resultado}')
 
