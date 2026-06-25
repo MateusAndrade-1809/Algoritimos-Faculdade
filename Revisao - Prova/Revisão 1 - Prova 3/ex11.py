@@ -1,15 +1,3 @@
-def maior_elemento(valores, indice):
-    if indice == len(valores) - 1:
-        return valores[indice]
-
-    maior_resto = maior_elemento(valores, indice + 1)
-
-    if valores[indice] > maior_resto:
-        return valores[indice]
-    else:
-        return maior_resto
-
-
 def contar_ocorrencias(valores, procurado, indice):
     if indice >= len(valores):
         return 0
